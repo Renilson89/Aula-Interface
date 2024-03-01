@@ -33,6 +33,7 @@ class MensagemAdapter(
     override fun onBindViewHolder(holder: MensagemViewHolder, position: Int) {
        val nome = lista[position]
         holder.txtNome.text = nome
+        
     }
 
     override fun getItemCount(): Int {
