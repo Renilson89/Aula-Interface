@@ -12,6 +12,9 @@ class ReciclerviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reciclerview)
 
+        val lista = listOf<String>()
+
         rvLista = findViewById(R.id.rv_lista)
+        rvLista.adapter = MensagemAdapter()
     }
 }
