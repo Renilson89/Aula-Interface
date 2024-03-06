@@ -25,7 +25,9 @@ class ReciclerviewActivity : AppCompatActivity() {
         )
 
         rvLista = findViewById(R.id.rv_lista)
-        rvLista.adapter = MensagemAdapter(lista){
+
+        
+        rvLista.adapter = MensagemAdapter{
             startActivity(
                 Intent(this,ListViewActivity::class.java)
             )

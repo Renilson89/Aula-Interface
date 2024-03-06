@@ -5,15 +5,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class MensagemAdapter(
-    private val lista: List<Mensagem>,
+
     private val clique:()->Unit
 ) : Adapter<MensagemAdapter.MensagemViewHolder>()
 {
+    private val listaMensagem = mutableListOf<Mensagem >()
+
+    fun atualizarListadeDados( lista: List<Mensagem>){
+        listaMensagem.addAll(lista)
+    }
+
       inner class MensagemViewHolder(
           val itemView: View
       ) : ViewHolder(itemView) {
@@ -41,7 +46,7 @@ class MensagemAdapter(
     }
 
     override fun onBindViewHolder(holder: MensagemViewHolder, position: Int) {
-       val mensagem= lista[position]
+       val mensagem= listaMensagem[position]
         holder.bind(mensagem)
 
 
@@ -57,7 +62,7 @@ class MensagemAdapter(
     }
 
     override fun getItemCount(): Int {
-        return lista.size
+        return listaMensagem.size
     }
 
 }
