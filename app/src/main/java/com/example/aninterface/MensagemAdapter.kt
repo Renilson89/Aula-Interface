@@ -3,21 +3,28 @@ package com.example.aninterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class MensagemAdapter(
-    private val lista: List<Mensagem>)
-    : Adapter<MensagemAdapter.MensagemViewHolder>()
+    private val lista: List<Mensagem>,
+    private val clique:()->Unit
+) : Adapter<MensagemAdapter.MensagemViewHolder>()
 {
       inner class MensagemViewHolder(
           val itemView: View
       ) : ViewHolder(itemView) {
              val txtNome: TextView = itemView.findViewById(R.id.text_car_titulo)
              val txtMsg: TextView = itemView.findViewById(R.id.text_aplicacao)
+             val button: Button = itemView.findViewById(R.id.btn1)
              //val txtHora: TextView = itemView.findViewById(R.id.txt_hora)
-
+                fun bind(mensagem: Mensagem){
+                 txtNome.text = mensagem.nome
+                 txtMsg.text = mensagem.ultima
+                }
       }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MensagemViewHolder {
@@ -35,10 +42,17 @@ class MensagemAdapter(
 
     override fun onBindViewHolder(holder: MensagemViewHolder, position: Int) {
        val mensagem= lista[position]
-        holder.txtNome.text = mensagem.nome
-        holder.txtMsg.text = mensagem.ultima
+        holder.bind(mensagem)
+
+
        // holder.txtHora.text = mensagem.horario
 
+        //Aplica Evento de Click///////
+        /*val context = holder.button.context
+        holder.button.setOnClickListener{
+            Toast.makeText(context, "IDARON", Toast.LENGTH_SHORT).show()
+        }*/
+        
         
     }
 
