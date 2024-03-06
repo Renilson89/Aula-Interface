@@ -14,9 +14,9 @@ class MensagemAdapter(
       inner class MensagemViewHolder(
           val itemView: View
       ) : ViewHolder(itemView) {
-             val txtNome: TextView = itemView.findViewById(R.id.txt_nome)
-             val txtMsg: TextView = itemView.findViewById(R.id.txt_msg)
-             val txtHora: TextView = itemView.findViewById(R.id.txt_hora)
+             val txtNome: TextView = itemView.findViewById(R.id.text_car_titulo)
+             val txtMsg: TextView = itemView.findViewById(R.id.text_aplicacao)
+             //val txtHora: TextView = itemView.findViewById(R.id.txt_hora)
 
       }
 
@@ -24,8 +24,11 @@ class MensagemAdapter(
         val layoutInflater = LayoutInflater.from(
             parent.context
         )
-        val itemView = layoutInflater.inflate(
+        /*val itemView = layoutInflater.inflate(
             R.layout.item_lista,parent,false
+        )*/
+        val itemView = layoutInflater.inflate(
+            R.layout.cardview,parent,false
         )
         return MensagemViewHolder(itemView)
     }
@@ -34,7 +37,7 @@ class MensagemAdapter(
        val mensagem= lista[position]
         holder.txtNome.text = mensagem.nome
         holder.txtMsg.text = mensagem.ultima
-        holder.txtHora.text = mensagem.horario
+       // holder.txtHora.text = mensagem.horario
 
         
     }

@@ -16,13 +16,16 @@ class ReciclerviewActivity : AppCompatActivity() {
         val lista = listOf(
             Mensagem("Renilson Marques", "Negativo", "11:50"),
             Mensagem("Pinheiro", "asdf", "11:50"),
-            Mensagem("Kele", "asdf", "11:50"),
-            Mensagem("Magrela", "Nasdf","15:55"),
-            Mensagem("Magrela2", "no", "5:50"),
+            Mensagem("asdf", "asdf", "11:50"),
+            Mensagem("Cuevo", "Nasdf","15:55"),
+            Mensagem("asdfasdfasdf", "no", "5:50"),
         )
 
         rvLista = findViewById(R.id.rv_lista)
         rvLista.adapter = MensagemAdapter(lista)
-        rvLista.layoutManager = LinearLayoutManager(this)
+        rvLista.layoutManager = LinearLayoutManager(
+            this,
+            RecyclerView.VERTICAL,
+            false)
     }
 }
