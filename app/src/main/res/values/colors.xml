@@ -7,5 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<<<<<<< HEAD
     <color name="cinza">#757575</color>
+=======
+    <color name="cinza">#989797</color>
+>>>>>>> 0945ffc50baef713a94024a43cd25ad4a009afa1
 </resources>
